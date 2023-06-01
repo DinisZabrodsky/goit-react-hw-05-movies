@@ -3,8 +3,6 @@ import { lazy } from "react";
 
 import { Header } from './Header/Header';
 import { HomePage } from "./Pages/HomePage";
-// import { MoviesPage } from "./Pages/MoviesPage"
-// import { NotFound } from "./Pages/NotFound"
 
 
 const Movies = lazy(() => import('./Pages/MoviesPage'));
