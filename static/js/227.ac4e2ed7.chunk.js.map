@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/227.ac4e2ed7.chunk.js","mappings":"gMAEe,SAASA,IACpB,OAAO,+BACH,yCAEP,C","sources":["Pages/MoviesPage.jsx"],"sourcesContent":["\n\nexport default function MoviesPage () {\n    return <>\n        <div>MoviesPage</div>\n    </>\n}"],"names":["MoviesPage"],"sourceRoot":""}
