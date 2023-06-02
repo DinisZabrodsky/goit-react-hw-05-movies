@@ -1,0 +1,38 @@
+.header{
+    display: block;
+    width: 100%;
+    background-color: rgb(6, 6, 123);
+}
+
+
+.hedderConteiner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 0 20px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    max-width: 1050px;
+    height: 50px;
+
+}
+
+.headerNavLink {
+    display: block;
+    padding: 7px 15px;
+
+    text-decoration: none;
+    color: aliceblue;
+
+    border: 1px solid rgb(19, 2, 65);
+    border-radius: 3px;
+    background-color: rgb(2, 2, 67);
+}
+
+.headerNavLink:hover, .headerNavLink:focus {
+    scale: 103%;
+    cursor: pointer;
+}

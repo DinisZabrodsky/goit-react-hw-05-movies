@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { getFilmsOfDay } from "../api/getFilms"
 
-import TrendingForDay from "components/TrendingForDay/TrendingForDay";
+import FilmsList from "components/FilmsList/FilmsList";
 import { Loading } from "components/Loading/Loading";
 import { AddMore } from "components/AddMore/AddMore";
 
@@ -41,9 +41,7 @@ export function HomePage () {
     }
 
     return <>
-        <div>Home HomePage</div>
-        <TrendingForDay filmData={filmList}/>
-
+        <FilmsList filmData={filmList} sectionTitle={'Top movies today'}/>
 
         {loading || filmList.length === 0 ? <Loading /> : <AddMore addMoreFn={addMoreFn}/>} 
     </>

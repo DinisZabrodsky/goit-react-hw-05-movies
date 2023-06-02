@@ -1,8 +1,8 @@
 import { Link, useLocation } from "react-router-dom"
 
-import cssTFDL from "./TrendingForDayList.module.css"
+import cssTFDL from "./FilmsListItem.module.css"
 
-export function TrendingForDayList ({id, title, poster}) {
+export function FilmsListItem ({id, title, poster}) {
     const pageLocation = useLocation()
 
     return<>
