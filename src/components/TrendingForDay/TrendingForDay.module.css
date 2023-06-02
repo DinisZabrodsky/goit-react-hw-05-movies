@@ -1,0 +1,29 @@
+.conteiner {
+    display: block;
+    max-width: 1200px;
+    padding: 20px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.title {
+    font-size: 36px;
+    align-items: center;
+    text-align: center;
+}
+
+.list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    box-sizing: content-box;
+
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}

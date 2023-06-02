@@ -1,9 +1,18 @@
+import { Link, useLocation } from "react-router-dom"
 
-export function TrendingForDayList ({title}) {
+import cssTFDL from "./TrendingForDayList.module.css"
+
+export function TrendingForDayList ({id, title, poster}) {
+    const pageLocation = useLocation()
+
     return<>
-        <li>
-            <div></div>
-            <h3>{title}</h3>
-        </li>
+        <Link to={`movie/${id}`} state={pageLocation}>
+            <li className={cssTFDL.listItem}>
+                <img className={cssTFDL.listItemIMG}src={`https://image.tmdb.org/t/p/w500/${poster}`} alt={title} width={300}/>
+                <div className={cssTFDL.description}>
+                    <h3>{title}</h3>
+                </div>
+            </li>
+        </Link>
     </>
 }
