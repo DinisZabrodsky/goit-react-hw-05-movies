@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect,  useState } from "react"
 import { getFilmsOfDay } from "../api/getFilms"
 
 import FilmsList from "components/FilmsList/FilmsList";
@@ -15,7 +15,6 @@ export function HomePage () {
         setLoading(true)
         if (filmList.length === 0 || search.get === true ){
             
-
             const responce = async () => {
                 const filmBase = await getFilmsOfDay(search.page)
 
@@ -29,12 +28,12 @@ export function HomePage () {
             }
         
             responce()
-            console.log('ok')
         }
         setTimeout(() => {setLoading(false)},250)
         
 
     },[filmList, search])
+
 
     const addMoreFn = () => {
         return setSearch((prev) => { return {...prev, page: prev.page + 1, get: true}})
