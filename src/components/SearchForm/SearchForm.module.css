@@ -1,0 +1,17 @@
+.form {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.form > input {
+    width: 250px;
+    height: 25px;
+    border-radius: 3px;
+
+    padding: 3px;
+    font-size: 17px;
+}

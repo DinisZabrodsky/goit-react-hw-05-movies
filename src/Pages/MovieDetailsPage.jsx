@@ -24,9 +24,9 @@ export default function MovieDetailsPage () {
 			</Link>
             <FilmMoreInfo aboutFilm={aboutFilm}/>
 
-            <ul>
-                <Link to='cast'>Cast</Link>
-                <Link to='reviews'>Reviews</Link>
+            <ul className="pageSection">
+                <Link className="pageSectionBtn" to='cast'>Cast</Link>
+                <Link className="pageSectionBtn" to='reviews'>Reviews</Link>
             </ul>
 
             <Suspense>

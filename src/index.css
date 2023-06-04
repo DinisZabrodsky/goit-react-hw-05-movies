@@ -23,7 +23,7 @@ code {
   padding: 10px 15px 100px 15px;
 }
 
-.pageBtnBack {
+.pageBtnBack, .pageSectionBtn {
   display: block;
   margin: 10px;
 
@@ -40,5 +40,13 @@ code {
 
   cursor: pointer;
   
+}
+
+.pageSection {
+  display: flex;
+}
+
+.pageSectionBtn {
+  width: 75px;
 }
 

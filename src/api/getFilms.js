@@ -26,3 +26,15 @@ export async function getFilmInfo (id) {
     const {data} = await axios(`${BASE_URL}/movie/${id}?api_key=${API_KEY}&language=en-US`)
     return data
 }
+
+// Пошук детальної інформації про фільм - Актори
+export async function getFilmInfoCast (id) {
+    const {data} = await axios(`${BASE_URL}/movie/${id}/credits?api_key=${API_KEY}`)
+    return data
+}
+
+// Пошук детальної інформації про фільм - Reviews
+export async function getFilmInfoReviews (id) {
+    const {data} = await axios(`${BASE_URL}/movie/${id}/reviews?api_key=${API_KEY}`)
+    return data
+}

@@ -1,0 +1,37 @@
+.actorList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.actorIten {
+    display: block;
+    max-width: 200px;
+    min-height: 350px;
+
+    border-radius: 3px;
+    box-sizing: border-box;
+    padding-bottom: 3px;
+
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5), 0px 3px 3px rgba(0, 0, 0, 0.12), 1px 5px 7px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.actorIten  > img {
+    display: block;
+    width: 100%;
+    height: 295px;
+}
+
+.actorIten > h4 {
+    margin: 0;
+    margin-top: 3px;
+    margin-bottom: 5px;
+
+    text-align: center;
+}
+
+.actorIten > p {
+    margin: 0;
+
+    text-align: center;
+}

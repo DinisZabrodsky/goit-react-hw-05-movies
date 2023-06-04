@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import cssSF from './SearchForm.module.css'
 
 
 export function SearchForm ({searchValue, searchSubmit}) {
@@ -33,8 +34,8 @@ export function SearchForm ({searchValue, searchSubmit}) {
     }
 
     return (
-        <form action="query" onSubmit={handelForm}>
-                <input type="text" onChange={handelChange} value={inputValue}/>
+        <form className={cssSF.form} action="query" onSubmit={handelForm}>
+            <input type="text" onChange={handelChange} value={inputValue}/>
 
             <button type='submit'>Пошук</button>
         </form>  
