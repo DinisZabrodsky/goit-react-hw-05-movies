@@ -11,13 +11,23 @@ import { useSearchParams } from "react-router-dom";
 export default function MoviesPage () {
 
     const [searchfilmList, setSearchFilmList] = useState([])
+    const [firstRender, setFirstRender] = useState(true)
     const [search, setSearch] = useState({search: "", page: 1, get: false, loading: false})
     const [searchParams, setSearchParams] = useSearchParams()
+    const searchQuery = searchParams.get('query') ?? ''
     
 
     useEffect(() => {
-        console.log(search)
+        if(searchQuery !== "" && firstRender) {
+            console.log(searchQuery)
+            setFirstRender(false)
+            setSearch({page: 1, search: searchQuery, get: true, loading: true})
+            return
+        }
+    },[searchQuery, firstRender])
 
+    useEffect(() => {
+        
         if(search.get && search.search !== "") {
             responceSearch()
 
@@ -37,9 +47,13 @@ export default function MoviesPage () {
         }
     }, [search])
 
-    const searchValue = (value) => {
-        setSearch({page: 1, search: value, get: true, loading: true})
-        setSearchParams({query: value})
+    const searchSubmit = (value) => {
+        if(value === search.search) {
+            return  alert(`Ви ввели запит "${value}" повторно`)
+        } else {
+            setSearch({page: 1, search: value, get: true, loading: true})
+            setSearchParams({query: value})
+        }
     }
 
     const addMoreFn = () => {
@@ -47,7 +61,7 @@ export default function MoviesPage () {
     }
 
     return <>
-        <SearchForm searchValue={searchValue}/>
+        <SearchForm searchValue={searchQuery} searchSubmit={searchSubmit}/>
 
         {searchfilmList.length !== 0 && <FilmsList filmData={searchfilmList} sectionTitle={`Результати пошуку за запитом "${search.search}"`}/>}
 
