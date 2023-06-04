@@ -1,10 +1,18 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 
 export function SearchForm ({searchValue, searchSubmit}) {
 
     const [inputValue, setInputValue] = useState('')
     const [firstRenderForm, setFirstRenderForm] = useState(true)
+
+    useEffect(()=>{
+        if(firstRenderForm) {
+            setInputValue(searchValue)
+            setFirstRenderForm(false)
+            return
+        }
+    },[firstRenderForm, searchValue])
 
     const handelChange = (event) => {
         const { value } = event.target
@@ -13,12 +21,6 @@ export function SearchForm ({searchValue, searchSubmit}) {
 
     const handelForm = (event) => {
         event.preventDefault()
-
-        if(searchValue !== "" && firstRenderForm) {
-            setInputValue(searchValue)
-            setFirstRenderForm(false)
-            return
-        }
         
         if(!inputValue) {
             return  alert('Введіть запит')

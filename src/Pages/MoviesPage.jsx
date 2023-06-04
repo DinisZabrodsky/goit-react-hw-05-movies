@@ -19,7 +19,6 @@ export default function MoviesPage () {
 
     useEffect(() => {
         if(searchQuery !== "" && firstRender) {
-            console.log(searchQuery)
             setFirstRender(false)
             setSearch({page: 1, search: searchQuery, get: true, loading: true})
             return
