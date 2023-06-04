@@ -33,6 +33,7 @@ export default function MoviesPage () {
             async function responceSearch () {
                 const data = await getSearchFilms(search.search, search.page)
 
+
                 if(!data.results.length) {
                     alert(`За вишим запитом ${search.search}  результати не знайдені`)
                 } else if(search.page === 1) {

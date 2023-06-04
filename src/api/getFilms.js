@@ -20,3 +20,9 @@ export async function getSearchFilms (searchQuery, page) {
     const {data} = await axios(`${BASE_URL}/search/movie?query=${searchQuery}&api_key=${API_KEY}&include_adult=false&language=en-US&page=${page}`)
     return data
 }
+
+// Пошук детальної інформації про фільм
+export async function getFilmInfo (id) {
+    const {data} = await axios(`${BASE_URL}/movie/${id}?api_key=${API_KEY}&language=en-US`)
+    return data
+}

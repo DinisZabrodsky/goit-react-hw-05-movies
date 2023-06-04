@@ -1,18 +1,37 @@
-import { useLocation, useParams } from "react-router-dom"
+import { Suspense, useEffect, useState } from "react"
+import { Link, Outlet, useLocation, useParams } from "react-router-dom"
+
+import { getFilmInfo } from "../api/getFilms"
+import { FilmMoreInfo } from "components/FilmMoreInfo/FilmMoreInfo"
 
 export default function MovieDetailsPage () {
     const location = useLocation()
     const {movieId} = useParams()
-    console.log(movieId)
-    console.log(location)
-    return <>
+    const [aboutFilm, setAboutFilm] = useState({})
 
-    {/* <Link
-				to={location.state ? location.state : '/'}
-				className='btn btn-success m-2'
-			>
+    useEffect(() => {
+        filmsInfo()
+
+        async function filmsInfo() {
+            const filmsData = await getFilmInfo(movieId)
+            setAboutFilm(filmsData)
+        } 
+    },[movieId])
+    
+    return <div className="pageConteiner">
+            <Link className="pageBtnBack" to={location.state ? location.state : '/'}>
 				Back
-			</Link> */}
-        <div>MovieDetailsPage</div>
-    </>
+			</Link>
+            <FilmMoreInfo aboutFilm={aboutFilm}/>
+
+            <ul>
+                <Link to='cast'>Cast</Link>
+                <Link to='reviews'>Reviews</Link>
+            </ul>
+
+            <Suspense>
+                <Outlet/>
+            </Suspense>
+
+    </div>
 }

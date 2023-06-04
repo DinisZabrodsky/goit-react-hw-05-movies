@@ -39,9 +39,9 @@ export function HomePage () {
         return setSearch((prev) => { return {...prev, page: prev.page + 1, get: true}})
     }
 
-    return <>
+    return <div className="pageConteiner">
         <FilmsList filmData={filmList} sectionTitle={'Top movies today'}/>
 
         {loading || filmList.length === 0 ? <Loading /> : <AddMore addMoreFn={addMoreFn}/>} 
-    </>
+    </div>
 }
